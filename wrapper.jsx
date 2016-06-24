@@ -87,8 +87,8 @@ var Wrapper = React.createClass({
   },
 
   activate: function (e) {
-    ARRAY = this.props.elements;
-    var activeIdx = ARRAY.indexOf(e.currentTarget.className.split(" ")[2]);
+    var elements = this.props.elements;
+    var activeIdx = elements.indexOf(e.currentTarget.className.split(" ")[2]);
     this.setState({ active: activeIdx });
   },
 
