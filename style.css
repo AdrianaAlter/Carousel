@@ -1,0 +1,337 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  box-shadow: none;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  font-family: monospace;
+}
+
+.group:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  height: 60px;
+  width: 145px;
+  border-radius: 2%;
+  border: 2px solid transparent;
+  display: block;
+  float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul {
+  margin: auto;
+  width: 80%;
+  position: relative;
+}
+
+
+.active {
+  border-color: darkred;
+  color: oldlace;
+}
+
+.list {
+  width: 82%;
+  margin-left: 7%;
+}
+
+.left-left{
+  transform: rotateY(-57deg) translateZ(-106px) translateY(9px);
+  height: 52px;
+  position: absolute;
+  left: -7% !important;
+}
+
+.left {
+
+  transform: rotateY(-45deg) translateZ(-32px) translateY(3px);
+  position: absolute;
+  left: 16% !important;
+}
+
+.center {
+  height: 64px;
+  position: absolute;
+  left: 40% !important;
+  top: 0%;
+  -webkit-filter: saturate(200%);
+}
+.right {
+  transform: rotateY(45deg) translateZ(-33px) translateY(3px);
+  position: absolute;
+  left: 64.5% !important;
+}
+
+.right-right {
+  height: 52px;
+  transform: rotateY(57deg) translateZ(-102px) translateY(9px);
+  position: absolute;
+  left: 88.5% !important;
+}
+
+ul {
+  display: block;
+  margin: auto;
+  height: 64px;
+  position: absolute;
+  transform-style: preserve-3d;
+  background: transparent;
+  -webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50% -500px;
+}
+
+.wrapper {
+  margin: auto;
+  width: 60%;
+  padding: 6px;
+  background: tan;
+  position: relative;
+  perspective: 1000px;
+  height: 200px;
+  border-radius: 2%;
+}
+
+.sample {
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  margin: 25% auto auto auto;
+  width: 100%;
+  height: 398px;
+  border-radius: 2%;
+  border: 2px solid #1a1a1a;
+  display: block;
+}
+
+a {
+  position: absolute;
+  bottom: 3%;
+  font-size: 18px;
+  right: 3%;
+  color: #1a1a1a;
+}
+
+h1 {
+  padding: 3px;
+}
+/*BUTTONS*/
+
+button, button:after {
+  border-radius: 50%;
+  display: block;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  color: darkred;
+  margin-top: 3%;
+  background: transparent;
+}
+
+button:first-child {
+  float: right;
+  margin-right: 13%;
+}
+
+button:last-child {
+  float: left;
+  margin-left: 13%;
+}
+
+button:after {
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  width: 0;
+  top: 25%;
+  left: 31%;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 27px solid darkred;
+}
+
+button:nth-child(2):after {
+  border-right: 27px solid darkred;
+  border-left: none;
+  left: 14%;
+}
+
+/*NAVIGATION DOTS*/
+
+.dots {
+  margin-left: 21%;
+  margin-top: 12%;
+}
+.dot {
+  background: oldlace !important;
+  display: block;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  float: left;
+  margin-left: 5px;
+}
+
+.dot-active, .page-active {
+  background: darkred !important;
+}
+
+
+.pages {
+  left: 39%;
+  margin: auto;
+  display: block;
+  height: 10%;
+  top: 75%;
+  width: 80%;
+  position: absolute;
+}
+
+.page {
+  display: block;
+  height: 3px;
+  width: 21px;
+  float: left;
+  margin-right: 5px;
+  background: #1a1a1a;
+  cursor: pointer;
+  font-size: 0px;
+}
+
+
+
+/*SAMPLE IMAGES*/
+
+.cloak {
+  background-image: url('./images/backgrounds/cloak.png');
+}
+
+.window {
+  background-image: url('./images/backgrounds/window.jpg');
+}
+
+.wall {
+  background-image: url('./images/backgrounds/wall.jpg');
+}
+
+.tile {
+  background-image: url('./images/backgrounds/tile.gif');
+}
+
+.tapestry {
+  background-image: url('./images/backgrounds/tapestry.jpg');
+}
+
+.frame {
+  background-image: url("./images/frame.png");
+}
+
+.wood {
+  background-image: url("./images/backgrounds/wood.jpg");
+}
+
+.stone {
+  background-image: url("./images/backgrounds/stone.jpg");
+}
+
+.scroll {
+  background-size: contain;
+  background-position-x: 44%;
+  background-image: url("./images/backgrounds/scroll.png");
+}
+
+.gold {
+  background-image: url("./images/backgrounds/gold.jpg");
+}
+
+.wood-panels {
+  background-image: url("./images/backgrounds/wood-panels.jpg");
+}
+
+.stone2 {
+  background-image: url("./images/backgrounds/stone2.jpg");
+}
+.versailles {
+  background-image: url("./images/backgrounds/versailles.jpg");
+}
+.ceiling {
+  background-image: url("./images/backgrounds/ceiling.jpg");
+}
+.book-cover {
+  background-size: contain;
+  background-position-x: 45.5%;
+  background-image: url("./images/backgrounds/book-cover.jpg");
+}
+.stained-glass {
+  background-image: url("./images/backgrounds/stained-glass.jpg");
+}
+.window2 {
+  background-image: url("./images/backgrounds/window2.jpg");
+}
+
+.white-fabric {
+  background-image: url("./images/backgrounds/white-fabric.jpg");
+}
+
+.magic {
+  background-image: url("./images/backgrounds/magic.jpg");
+  background-position-x: 44%;
+}
+
+.flower-frame {
+  background-image: url("./images/backgrounds/flower-frame.jpg");
+  background-position-x: 47.5%;
+}
+
+.canvas {
+  background-image: url("./images/backgrounds/canvas.jpg");
+}
+
+.tile2 {
+  background-image: url("./images/backgrounds/tile2.jpg");
+}
+.parchment2 {
+  background-image: url("./images/backgrounds/parchment2.jpg");
+}
+.parchment3 {
+  background-image: url("./images/backgrounds/parchment3.jpg");
+}
+.rust {
+  background-image: url("./images/backgrounds/rust.jpg");
+}
+.writing {
+  background-image: url("./images/backgrounds/writing.jpg");
+}
+.metal-wall {
+  background-image: url("./images/backgrounds/metal-wall.jpg");
+}
+.berries {
+  background-image: url("./images/backgrounds/berries.jpg");
+}
+.rug {
+  background-image: url("./images/backgrounds/rug.jpg");
+}
+.filigree {
+  background-image: url("./images/backgrounds/filigree.jpg");
+}
+
+.flower-page {
+  background-image: url("./images/backgrounds/flower-page.png");
+}
+
+.checkers {
+  background-image: url("./images/backgrounds/checkers.jpg");
+}
