@@ -30,6 +30,7 @@ li {
   float: left;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 ul {
@@ -40,7 +41,7 @@ ul {
 
 
 .active {
-  border-color: darkred;
+  -webkit-filter: saturate(400%);
   color: oldlace;
 }
 
@@ -68,7 +69,6 @@ ul {
   position: absolute;
   left: 40% !important;
   top: 0%;
-  -webkit-filter: saturate(200%);
 }
 .right {
   transform: rotateY(45deg) translateZ(-33px) translateY(3px);
@@ -102,7 +102,6 @@ ul {
   position: relative;
   perspective: 1000px;
   height: 200px;
-  border-radius: 2%;
 }
 
 .sample {
@@ -110,17 +109,23 @@ ul {
   background-repeat: no-repeat;
   margin: 25% auto auto auto;
   width: 100%;
-  height: 398px;
-  border-radius: 2%;
-  border: 2px solid #1a1a1a;
+  height: 400px;
   display: block;
 }
 
-a {
+.links {
   position: absolute;
-  bottom: 3%;
-  font-size: 18px;
-  right: 3%;
+  bottom: 0;
+  right: 20%;
+  display: block;
+  margin-top: 10px;
+}
+
+a {
+  display: block;
+  float: left;
+  margin-left: 260px;
+  font-size: 16px;
   color: #1a1a1a;
 }
 
@@ -138,16 +143,17 @@ button, button:after {
   color: darkred;
   margin-top: 3%;
   background: transparent;
+  cursor: pointer;
 }
 
 button:first-child {
   float: right;
-  margin-right: 13%;
+  margin-right: 14%;
 }
 
 button:last-child {
   float: left;
-  margin-left: 13%;
+  margin-left: 14%;
 }
 
 button:after {
@@ -183,6 +189,7 @@ button:nth-child(2):after {
   border-radius: 50%;
   float: left;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .dot-active, .page-active {

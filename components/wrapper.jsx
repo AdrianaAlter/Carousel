@@ -35,8 +35,8 @@ var Wrapper = React.createClass({
   },
 
   loop: function () {
+    if ((this.state.left / 5) % 1 == 0) {this.paginate(this.state.left)};
     this.setState({rightRight: (this.state.rightRight + 1 - this.props.elements.length), right: (this.state.rightRight), center: (this.state.right), left: (this.state.center), leftLeft: (this.state.left)});
-    if ((newLeftLeft / 5) % 1 == 0) {this.paginate(newLeftLeft)};
   },
 
   loopBack: function () {
@@ -93,7 +93,7 @@ var Wrapper = React.createClass({
   },
 
   setBG: function (e) {
-    var bg = e.currentTarget.className.split(" ")[2];
+    var bg = e.currentTarget.className.split(" ")[e.currentTarget.className.split(" ").length - 1];
     this.setState({ background: bg });
   },
 

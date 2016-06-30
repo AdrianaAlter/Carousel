@@ -47,10 +47,10 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
 	
-	ARRAY = __webpack_require__(168);
+	ARRAY = __webpack_require__(174);
 	
-	var Wrapper = __webpack_require__(169);
-	var List = __webpack_require__(170);
+	var Wrapper = __webpack_require__(168);
+	var List = __webpack_require__(169);
 	
 	var Carousel = React.createClass({
 	  displayName: 'Carousel',
@@ -61,9 +61,23 @@
 	      null,
 	      React.createElement(Wrapper, { elements: ARRAY }),
 	      React.createElement(
-	        'a',
-	        { href: 'http://www.adrianaalter.site/' },
-	        'Adriana Alter'
+	        'section',
+	        { className: 'links' },
+	        React.createElement(
+	          'a',
+	          { href: 'http://www.adrianaalter.site/' },
+	          'Adriana Alter'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'https://github.com/AdrianaAlter' },
+	          'github'
+	        ),
+	        React.createElement(
+	          'a',
+	          { href: 'https://www.linkedin.com/in/adriana-alter-598086111' },
+	          'LinkedIn'
+	        )
 	      )
 	    );
 	  }
@@ -20348,22 +20362,14 @@
 
 /***/ },
 /* 168 */
-/***/ function(module, exports) {
-
-	BACKGROUNDS = ["wood", "window", "cloak", "wall", "tile", "tapestry", "stone", "scroll", "gold", "wood-panels", "stone2", "versailles", "ceiling", "book-cover", "stained-glass", "window2", "white-fabric", "magic", "flower-frame", "canvas", "tile2", "rust", "parchment3", "writing", "metal-wall", "berries", "rug", "filigree", "flower-page", "checkers"];
-	
-	module.exports = BACKGROUNDS;
-
-/***/ },
-/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
-	var List = __webpack_require__(170);
-	var Buttons = __webpack_require__(172);
-	var Dots = __webpack_require__(173);
-	var Pages = __webpack_require__(174);
+	var List = __webpack_require__(169);
+	var Buttons = __webpack_require__(171);
+	var Dots = __webpack_require__(172);
+	var Pages = __webpack_require__(173);
 	
 	var Wrapper = React.createClass({
 	  displayName: 'Wrapper',
@@ -20397,10 +20403,10 @@
 	  },
 	
 	  loop: function () {
-	    this.setState({ rightRight: this.state.rightRight + 1 - this.props.elements.length, right: this.state.rightRight, center: this.state.right, left: this.state.center, leftLeft: this.state.left });
-	    if (newLeftLeft / 5 % 1 == 0) {
-	      this.paginate(newLeftLeft);
+	    if (this.state.left / 5 % 1 == 0) {
+	      this.paginate(this.state.left);
 	    };
+	    this.setState({ rightRight: this.state.rightRight + 1 - this.props.elements.length, right: this.state.rightRight, center: this.state.right, left: this.state.center, leftLeft: this.state.left });
 	  },
 	
 	  loopBack: function () {
@@ -20460,7 +20466,7 @@
 	  },
 	
 	  setBG: function (e) {
-	    var bg = e.currentTarget.className.split(" ")[2];
+	    var bg = e.currentTarget.className.split(" ")[e.currentTarget.className.split(" ").length - 1];
 	    this.setState({ background: bg });
 	  },
 	
@@ -20493,12 +20499,12 @@
 	module.exports = Wrapper;
 
 /***/ },
-/* 170 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
-	var Item = __webpack_require__(171);
+	var Item = __webpack_require__(170);
 	
 	var List = React.createClass({
 	  displayName: 'List',
@@ -20557,7 +20563,7 @@
 	module.exports = List;
 
 /***/ },
-/* 171 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -20576,7 +20582,7 @@
 	module.exports = Item;
 
 /***/ },
-/* 172 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -20604,7 +20610,7 @@
 	module.exports = Buttons;
 
 /***/ },
-/* 173 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -20633,7 +20639,7 @@
 	module.exports = Dots;
 
 /***/ },
-/* 174 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -20669,6 +20675,14 @@
 	});
 	
 	module.exports = Pages;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports) {
+
+	BACKGROUNDS = ["wood", "window", "cloak", "wall", "tile", "tapestry", "stone", "scroll", "gold", "wood-panels", "stone2", "versailles", "ceiling", "book-cover", "stained-glass", "window2", "white-fabric", "magic", "flower-frame", "canvas", "tile2", "rust", "parchment3", "writing", "metal-wall", "berries", "rug", "filigree", "flower-page", "checkers"];
+	
+	module.exports = BACKGROUNDS;
 
 /***/ }
 /******/ ]);
