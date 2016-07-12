@@ -8,12 +8,13 @@ var List = require('./list.jsx');
 
 var Carousel = React.createClass({
   render: function () {
-    return <div><Wrapper elements={ARRAY} />
-                <section className="links">
-                  <a href="http://www.adrianaalter.site/">Adriana Alter</a>
-                  <a href="https://github.com/AdrianaAlter">github</a>
-                  <a href="https://www.linkedin.com/in/adriana-alter-598086111">LinkedIn</a>
-                </section>
+    return <div>
+              <section className="links">
+                <a href="http://www.adrianaalter.site/">Adriana Alter</a>
+                <a href="https://github.com/AdrianaAlter">github</a>
+                <a href="https://www.linkedin.com/in/adriana-alter-598086111">LinkedIn</a>
+              </section>
+              <Wrapper elements={ARRAY} />
            </div>
   }
 });
