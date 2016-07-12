@@ -146,7 +146,7 @@ button, button:after {
 
 button:first-child {
   float: right;
-  margin-right: 14%;
+  margin-right: 15%;
 }
 
 button:last-child {
@@ -161,7 +161,7 @@ button:after {
   position: absolute;
   width: 0;
   top: 25%;
-  left: 31%;
+  left: 0%;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
   border-left: 27px solid darkred;
@@ -176,8 +176,9 @@ button:nth-child(2):after {
 /*NAVIGATION DOTS*/
 
 .dots {
-  margin-left: 21%;
-  margin-top: 12%;
+  position: absolute;
+  bottom: 5%;
+  left: 22%;
 }
 .dot {
   background: oldlace !important;
