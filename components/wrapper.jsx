@@ -67,9 +67,17 @@ var Wrapper = React.createClass({
   },
 
   bringCenter: function (e) {
-    var bgArray = e.currentTarget.style.backgroundImage.split("/");
-    var last = bgArray[bgArray.length - 1];
-    var bg = last.slice(0, last.length - 2);
+    var bgArray;
+    var bg;
+    if (e.currentTarget.className.split(" ")[0] == "dot") {
+      bgArray = e.currentTarget.className.split(" ");
+      bg = bgArray[bgArray.length - 1];
+    }
+    else {
+      bgArray = e.currentTarget.style.backgroundImage.split("/");
+      var last = bgArray[bgArray.length - 1];
+      bg = last.slice(0, last.length - 2);
+    }
     var newCenter = this.props.elements.indexOf(bg);
     if (newCenter - 2 < 0) {
       newCenter = (this.props.elements.length + Math.abs(newCenter));
@@ -90,7 +98,12 @@ var Wrapper = React.createClass({
 
   activate: function (e) {
     var elements = this.props.elements;
-    var activeIdx = elements.indexOf(e.currentTarget.className.split(" ")[2]);
+    var bgArray = e.currentTarget.style.backgroundImage.split("/");
+    var last = bgArray[bgArray.length - 1];
+    var bg = last.slice(0, last.length - 2);
+    var activeIdx = this.props.elements.indexOf(bg);
+
+    // var activeIdx = elements.indexOf(e.currentTarget.className.split(" ")[2]);
     this.setState({ active: activeIdx });
   },
 
