@@ -67,8 +67,10 @@ var Wrapper = React.createClass({
   },
 
   bringCenter: function (e) {
-    var newCenter = this.props.elements.indexOf(e.currentTarget.className.split(" ")[2]);
-
+    var bgArray = e.currentTarget.style.backgroundImage.split("/");
+    var last = bgArray[bgArray.length - 1];
+    var bg = last.slice(0, last.length - 2);
+    var newCenter = this.props.elements.indexOf(bg);
     if (newCenter - 2 < 0) {
       newCenter = (this.props.elements.length + Math.abs(newCenter));
     };
@@ -93,7 +95,7 @@ var Wrapper = React.createClass({
   },
 
   setBG: function (e) {
-    var bg = e.currentTarget.className.split(" ")[e.currentTarget.className.split(" ").length - 1];
+    var bg = e.currentTarget.style.backgroundImage;
     this.setState({ background: bg });
   },
 
@@ -104,14 +106,14 @@ var Wrapper = React.createClass({
   },
 
   render: function () {
-
+    var sampleBG = {backgroundImage: this.state.background};
     return <div className={"wrapper group"}>
               <h1>Carousel</h1>
               <List handleClick={this.handleClick} activeIdx={this.state.active} elements={this.props.elements} leftLeft={this.state.leftLeft} left={this.state.left} center={this.state.center} right={this.state.right} rightRight={this.state.rightRight} />
               <Buttons first={this.props.leftLeft} done={this.state.over} isOver={this.props.isOver} slide={this.slide} slideBack={this.slideBack} />
               <Dots elements={this.props.elements} bringCenter={this.bringCenter} active={this.state.active}/>
               <Pages elements={this.props.elements} goToPage={this.goToPage} current={this.state.page}/>
-              <section className={"sample " + this.state.background}></section>
+              <section className={"sample"} style={sampleBG}></section>
             </div>
   }
 

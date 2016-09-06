@@ -104,7 +104,8 @@ ul {
 }
 
 .sample {
-  background-size: cover !important;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   margin: 25% auto auto auto;
   width: 100%;
@@ -176,9 +177,11 @@ button:nth-child(2):after {
 /*NAVIGATION DOTS*/
 
 .dots {
-  position: absolute;
+  display: block;
+  margin: 18% 20%;
+  /*position: absolute;
   bottom: 5%;
-  left: 22%;
+  left: 22%;*/
 }
 .dot {
   background: oldlace !important;
@@ -197,7 +200,7 @@ button:nth-child(2):after {
 
 
 .pages {
-  left: 39%;
+  left: 42.5%;
   margin: auto;
   display: block;
   height: 10%;
