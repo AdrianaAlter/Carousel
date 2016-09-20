@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Info = require('./info.jsx');
 var List = require('./list.jsx');
 var Buttons = require('./buttons.jsx');
 var Dots = require('./dots.jsx');
@@ -7,7 +8,7 @@ var Pages = require('./pages.jsx');
 
 var Wrapper = React.createClass({
   getInitialState: function () {
-      return { leftLeft: 0, left: 1, center: 2, right: 3, rightRight: 4, active: 0, background: "" };
+      return { leftLeft: 0, left: 1, center: 2, right: 3, rightRight: 4, active: "", background: "" };
   },
 
   componentDidMount: function () {
@@ -102,8 +103,6 @@ var Wrapper = React.createClass({
     var last = bgArray[bgArray.length - 1];
     var bg = last.slice(0, last.length - 2);
     var activeIdx = this.props.elements.indexOf(bg);
-
-    // var activeIdx = elements.indexOf(e.currentTarget.className.split(" ")[2]);
     this.setState({ active: activeIdx });
   },
 
@@ -126,6 +125,7 @@ var Wrapper = React.createClass({
               <Buttons first={this.props.leftLeft} done={this.state.over} isOver={this.props.isOver} slide={this.slide} slideBack={this.slideBack} />
               <Dots elements={this.props.elements} bringCenter={this.bringCenter} active={this.state.active}/>
               <Pages elements={this.props.elements} goToPage={this.goToPage} current={this.state.page}/>
+              <Info />
               <section className={"sample"} style={sampleBG}></section>
             </div>
   }

@@ -69,7 +69,7 @@
 	        ),
 	        React.createElement(
 	          'a',
-	          { href: 'https://github.com/AdrianaAlter' },
+	          { href: 'https://github.com/AdrianaAlter/Carousel/' },
 	          'github'
 	        ),
 	        React.createElement(
@@ -21501,6 +21501,7 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
+	var Info = __webpack_require__(179);
 	var List = __webpack_require__(174);
 	var Buttons = __webpack_require__(176);
 	var Dots = __webpack_require__(177);
@@ -21510,7 +21511,7 @@
 	  displayName: 'Wrapper',
 	
 	  getInitialState: function () {
-	    return { leftLeft: 0, left: 1, center: 2, right: 3, rightRight: 4, active: 0, background: "" };
+	    return { leftLeft: 0, left: 1, center: 2, right: 3, rightRight: 4, active: "", background: "" };
 	  },
 	
 	  componentDidMount: function () {
@@ -21609,8 +21610,6 @@
 	    var last = bgArray[bgArray.length - 1];
 	    var bg = last.slice(0, last.length - 2);
 	    var activeIdx = this.props.elements.indexOf(bg);
-	
-	    // var activeIdx = elements.indexOf(e.currentTarget.className.split(" ")[2]);
 	    this.setState({ active: activeIdx });
 	  },
 	
@@ -21639,6 +21638,7 @@
 	      React.createElement(Buttons, { first: this.props.leftLeft, done: this.state.over, isOver: this.props.isOver, slide: this.slide, slideBack: this.slideBack }),
 	      React.createElement(Dots, { elements: this.props.elements, bringCenter: this.bringCenter, active: this.state.active }),
 	      React.createElement(Pages, { elements: this.props.elements, goToPage: this.goToPage, current: this.state.page }),
+	      React.createElement(Info, null),
 	      React.createElement('section', { className: "sample", style: sampleBG })
 	    );
 	  }
@@ -21824,6 +21824,74 @@
 	});
 	
 	module.exports = Pages;
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(34);
+	
+	var Info = React.createClass({
+	  displayName: 'Info',
+	
+	
+	  getInitialState: function () {
+	    return { display: "icon" };
+	  },
+	
+	  toggleDisplay: function () {
+	    var sample = document.getElementsByClassName('sample')[0];
+	    sample.style.display != "none" ? sample.style.display = "none" : sample.style.display = "block";
+	    this.state.display == "icon" ? this.setState({ display: "info" }) : this.setState({ display: "icon" });
+	  },
+	
+	  render: function () {
+	    var xout = React.createElement(
+	      'span',
+	      { onClick: this.toggleDisplay },
+	      'X'
+	    );
+	    var icon = React.createElement(
+	      'span',
+	      { className: 'icon', onClick: this.toggleDisplay },
+	      '?'
+	    );
+	    var infoShow = React.createElement(
+	      'div',
+	      { className: 'info' },
+	      xout,
+	      React.createElement(
+	        'p',
+	        null,
+	        'The carousel is a reusable React.js component. It needs to be initialized with an array of file names, which will form the slides; at the top of the carousel.jsx file, just change the variable assignment for "ARRAY" to point to whatever array you would like to use.'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'To cycle through the carousel, use the triangular buttons to the left and right.  The carousel loops both forwards and backwards.  Click on a slide to select it.'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'The dots represent the individual slides.  Selecting a slide will highlight the corresponding dot.  You can also navigate through the carousel by clicking on the dots.'
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'The rectangles represent the different pages in the carousel; clicking on the first rectangle will display the first five carousel slides, clicking on the second rectangle will display the second five, and so on.  If you are manually cycling through the carousel, the rectangle for the page you are currently viewing will automatically highlight.'
+	      )
+	    );
+	    if (this.state.display == "icon") {
+	      return icon;
+	    } else {
+	      return infoShow;
+	    };
+	  }
+	
+	});
+	
+	module.exports = Info;
 
 /***/ }
 /******/ ]);

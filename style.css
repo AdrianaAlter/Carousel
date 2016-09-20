@@ -5,10 +5,20 @@
   outline: none;
   list-style: none;
   box-shadow: none;
-  color: black;
+  color: #3B1024;
   font-size: 24px;
   text-align: center;
-  font-family: monospace;
+  font-family: 'Monda', sans-serif;
+}
+
+html {
+  background-color: #3B1024;
+  background-image: url("https://www.transparenttextures.com/patterns/pinstripe-dark.png");
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-position: top left, center 0;
+  background-attachment: fixed, fixed;
+
 }
 
 .group:after {
@@ -101,6 +111,7 @@ ul {
   position: relative;
   perspective: 1000px;
   height: 200px;
+  border-radius: 4px;
 }
 
 .sample {
@@ -109,8 +120,9 @@ ul {
   background-repeat: no-repeat;
   margin: 25% auto auto auto;
   width: 100%;
-  height: 400px;
+  height: 350px;
   display: block;
+  border-radius: 4px;
 }
 
 .links {
@@ -123,9 +135,9 @@ ul {
 a {
   display: block;
   float: left;
-  margin-left: 15%;
-  font-size: 16px;
-  color: #1a1a1a;
+  margin-left: 15.2%;
+  font-size: 19px;
+  color: tan;
 }
 
 h1 {
@@ -139,7 +151,7 @@ button, button:after {
   height: 20px;
   width: 20px;
   position: relative;
-  color: darkred;
+  color: #3B1024;
   margin-top: 3%;
   background: transparent;
   cursor: pointer;
@@ -165,11 +177,11 @@ button:after {
   left: 0%;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
-  border-left: 27px solid darkred;
+  border-left: 27px solid #3B1024;
 }
 
 button:nth-child(2):after {
-  border-right: 27px solid darkred;
+  border-right: 27px solid #3B1024;
   border-left: none;
   left: 14%;
 }
@@ -178,10 +190,11 @@ button:nth-child(2):after {
 
 .dots {
   display: block;
-  margin: 18% 20%;
-  /*position: absolute;
-  bottom: 5%;
-  left: 22%;*/
+  height: 10px;
+  /*margin: 18% 0 0 20%;*/
+  position: absolute;
+  bottom: 3%;
+  left: 30.5%;
 }
 .dot {
   background: oldlace !important;
@@ -195,7 +208,7 @@ button:nth-child(2):after {
 }
 
 .dot-active, .page-active {
-  background: darkred !important;
+  background: #3B1024 !important;
 }
 
 
@@ -215,7 +228,35 @@ button:nth-child(2):after {
   width: 21px;
   float: left;
   margin-right: 5px;
-  background: #1a1a1a;
+  background: oldlace;
   cursor: pointer;
   font-size: 0px;
+}
+
+.info {
+  height: 350px;
+  width: 100%;
+  text-align: left;
+  display: block;
+  margin: 25% auto auto auto;
+  background: tan;
+  border-radius: 4px;
+  display: block;
+}
+
+p {
+  text-align: left;
+  padding: 10px 0 0 10px;
+  font-size: 16px;
+}
+
+.icon {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+span {
+  float: right;
+  padding: 0 20px;
+  cursor: pointer;
 }
